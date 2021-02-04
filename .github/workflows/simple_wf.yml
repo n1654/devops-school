@@ -9,11 +9,8 @@ on:
                 default: 'warning'
 jobs:
     job_id:
-         
-
     TIMESTAMP:
         runs-on: ubuntu-latest
-
         steps:
         - uses: actions/checkout@v2
         - name: 1.1 UPLOADING FILES
