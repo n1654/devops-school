@@ -18,7 +18,9 @@ jobs:
           uses: ./.github/actions/action_1.2
         - name: 1.2.1 Add to log file user input
           run: |
-            sudo echo "Hello ${{ github.event.inputs.name }}!" > /home/runner/work/devops-school/devops-school/log.md
+            pwd
+            ls -al /home/runner/work/devops-school/devops-school/log.md
+            sudo echo "Hello ${{ github.event.inputs.name }}!" >> /home/runner/work/devops-school/devops-school/log.md
         - name: 1.3 DOWNLOAD ARTIFACT
           uses: actions/upload-artifact@v2
           with:
