@@ -23,4 +23,4 @@ jobs:
           uses: actions/upload-artifact@v2
           with:
               name: log.md
-              path: ${{ env.GITHUB_WORKSPACE }}/log.md
+              path: ${{ GITHUB_WORKSPACE }}/log.md
