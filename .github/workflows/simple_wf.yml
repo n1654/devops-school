@@ -2,8 +2,14 @@ name: Simple Workflow
 
 on:
     workflow_dispatch:
-
+        input:
+            logLevel:
+                description: 'Log level'     
+                required: true
+                default: 'warning'
 jobs:
+    job_id:
+         
 
     TIMESTAMP:
         runs-on: ubuntu-latest
