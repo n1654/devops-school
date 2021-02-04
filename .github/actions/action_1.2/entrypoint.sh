@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/bash -x
 
 echo "EXECUTING PYTHON SCRIPT..."
 python3 /main.py
