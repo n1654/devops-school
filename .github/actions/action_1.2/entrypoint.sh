@@ -6,6 +6,8 @@ python3 /main.py
 echo "ls -lah"
 ls -lah
 
+env
+
 echo "pwd"
 pwd
 
