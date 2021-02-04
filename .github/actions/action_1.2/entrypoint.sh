@@ -7,7 +7,7 @@ echo "ls -lah"
 ls -lah
 
 env
-
+echo $new_var
 echo "pwd"
 pwd
 

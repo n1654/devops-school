@@ -6,6 +6,7 @@ on:
         description: 'Write something to add to the log.md'
         required: true
         default: 'Log stump'
+    
 jobs:
     TIMESTAMP:
         runs-on: ubuntu-latest
@@ -16,11 +17,15 @@ jobs:
             cp ./scripts/main.py ./.github/actions/action_1.2/main.py
         - name: 1.2 EXECUTING THE PYTHON SCRIPT
           uses: ./.github/actions/action_1.2
+          with:
+            new_var: ${{ github.event.inputs.name }}
+
         - name: 1.2.1 Add to log file user input
           run: |
             pwd
             ls -al /home/runner/work/devops-school/devops-school/log.md
             #sudo echo "Hello from the ${{ github.event.inputs.name }}!" >> /home/runner/work/devops-school/devops-school/log.md
+            
         - name: 1.3 DOWNLOAD ARTIFACT
           uses: actions/upload-artifact@v2
           with:
