@@ -7,7 +7,6 @@ on:
         required: true
         default: 'Log stump'
 jobs:
-    job_id:
     TIMESTAMP:
         runs-on: ubuntu-latest
         steps:
