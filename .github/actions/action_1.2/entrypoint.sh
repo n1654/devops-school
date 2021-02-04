@@ -6,9 +6,11 @@ python3 /main.py
 echo "ls -lah"
 ls -lah
 
-env
-echo $new_var
+#env
+
+echo $INPUT_NEW_VAR
 echo "pwd"
+echo $HOSTNAME
 pwd
 
 echo "ls -lah /github/workspace"
