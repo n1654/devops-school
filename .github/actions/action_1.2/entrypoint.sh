@@ -7,7 +7,7 @@ echo "ls -lah"
 ls -lah
 
 env
-cat $GITHUB_ENV
+
 echo "pwd"
 pwd
 
