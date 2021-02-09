@@ -2,6 +2,11 @@ name: Simple Workflow
 
 on:
     workflow_dispatch:
+        inputs:
+            some_var: 
+                description: Add some text to log.md
+                required: true
+                default: add some text here...
 
 jobs:
 
@@ -15,6 +20,8 @@ jobs:
             cp ./scripts/main.py ./.github/actions/action_1.2/main.py
         - name: 1.2 EXECUTING THE PYTHON SCRIPT
           uses: ./.github/actions/action_1.2
+          with:
+              exported_var: ${{ github.event.inputs.some_var }}
         - name: 1.3 DOWNLOAD ARTIFACT
           uses: actions/upload-artifact@v2
           with:
