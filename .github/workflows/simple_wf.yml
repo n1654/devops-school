@@ -2,6 +2,11 @@ name: Simple Workflow
 
 on:
     workflow_dispatch:
+      inputs:
+        myInput:
+          description: Some text here
+          default: ""
+          required: true
 
 jobs:
 
