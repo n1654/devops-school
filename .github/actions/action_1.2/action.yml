@@ -1,5 +1,11 @@
 name: 'Test'
 
+inputs:
+  myInput:
+    description: 'myInput'
+    required: false
+    default: ''
+
 runs:
     using: 'docker'
     image: 'Dockerfile'
