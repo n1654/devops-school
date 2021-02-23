@@ -22,7 +22,8 @@ jobs:
           uses: ./.github/actions/action_1.2
         - name: 1.3 ECHO USER INPUT
           run: |
-            echo ${{ github.event.inputs.myInput }} >> /home/runner/work/devops-school/devops-school/log.md
+            echo ${{ github.event.inputs.myInput }} >> /home/runner/work/devops-school/devops-school/log2.md
+            cat /home/runner/work/devops-school/devops-school/log2.md
         - name: 1.4 DOWNLOAD ARTIFACT
           uses: actions/upload-artifact@v2
           with:
