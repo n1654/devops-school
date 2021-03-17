@@ -3,11 +3,6 @@
 echo "EXECUTING PYTHON SCRIPT..."
 python3 /main.py
 
-echo "ls -lah"
-ls -lah
+#Passing newly created variable into the file log.md
+echo " $INPUT_NEW_VAR" >> log.md
 
-echo "pwd"
-pwd
-
-echo "ls -lah /github/workspace"
-ls -lah /github/workspace

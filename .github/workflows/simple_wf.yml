@@ -1,13 +1,15 @@
-name: Simple Workflow
-
+name: Manually triggered workflow
 on:
-    workflow_dispatch:
-
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Write something to add to the log.md'
+        required: true
+        default: 'Log stump'
+    
 jobs:
-
     TIMESTAMP:
         runs-on: ubuntu-latest
-
         steps:
         - uses: actions/checkout@v2
         - name: 1.1 UPLOADING FILES
@@ -15,8 +17,10 @@ jobs:
             cp ./scripts/main.py ./.github/actions/action_1.2/main.py
         - name: 1.2 EXECUTING THE PYTHON SCRIPT
           uses: ./.github/actions/action_1.2
+          with:
+            new_var: ${{ github.event.inputs.name }}
         - name: 1.3 DOWNLOAD ARTIFACT
           uses: actions/upload-artifact@v2
           with:
               name: log.md
-              path: /home/runner/work/devops-school/devops-school/log.md
+              path: ${{ github.workspace }}/log.md
