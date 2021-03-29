@@ -2,6 +2,11 @@ name: Simple Workflow
 
 on:
     workflow_dispatch:
+      inputs:
+        myInput:
+          description: Some text here
+          default: ""
+          required: true
 
 jobs:
 
@@ -15,8 +20,13 @@ jobs:
             cp ./scripts/main.py ./.github/actions/action_1.2/main.py
         - name: 1.2 EXECUTING THE PYTHON SCRIPT
           uses: ./.github/actions/action_1.2
-        - name: 1.3 DOWNLOAD ARTIFACT
+        - name: 1.3 ECHO USER INPUT
+          run: |
+            export DATE=`date '+%F_%H:%M:%S'`
+            echo "$DATE ${{ github.event.inputs.myInput }}" >> /home/runner/work/devops-school/devops-school/artifact.md
+            cat /home/runner/work/devops-school/devops-school/artifact.md
+        - name: 1.4 DOWNLOAD ARTIFACT
           uses: actions/upload-artifact@v2
           with:
-              name: log.md
-              path: /home/runner/work/devops-school/devops-school/log.md
+              name: artifact.md
+              path: /home/runner/work/devops-school/devops-school/artifact.md
