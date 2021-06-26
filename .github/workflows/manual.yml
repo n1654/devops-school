@@ -6,7 +6,7 @@ on:
     inputs:
       name:
         description: 'Input your parameter here'
-        default: 'Hello from Andrey ;)'
+        default: 'Hello from Andrey Ulrikh ;)'
         required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -14,14 +14,10 @@ jobs:
   homework:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Show parameter
-      run: echo "Parameter=${{ github.event.inputs.name }}"
-      
     - name: Create file
-      run: echo "${{ github.event.inputs.name }}" >output.txt && date >>output.txt      
-      
+      run: echo "${{ github.event.inputs.name }}" >output.txt && date >>output.txt
+
     - name: Archive production artifacts
       uses: actions/upload-artifact@v2
       with:
